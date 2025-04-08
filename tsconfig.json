@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "lib": ["dom", "es2020"],
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["components/"],
+      "@pages": ["pages/"],
+      "@api": ["api/"],
+      "@helpers": ["helpers/"],
+      "@store": ["store/"],
+      "@hooks": ["hooks/"]
+    }
+  },
+  "include": ["src"]
+}
