@@ -7,11 +7,13 @@ import {
   useDispatch as dispatchHook,
   useSelector as selectorHook,
 } from 'react-redux';
+import { postsReducer } from './slices/postsSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const rootReducer = combineReducers({
   profile: profileReducer,
+  posts: postsReducer,
 });
 
 export const store = configureStore({

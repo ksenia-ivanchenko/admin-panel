@@ -17,15 +17,15 @@ const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    fetchProfileRequest: (state) => {
+    getProfileRequest: (state) => {
       state.loading = true;
       state.error = null;
     },
-    fetchProfileSuccess: (state, action: PayloadAction<UserProfile>) => {
+    getProfileSuccess: (state, action: PayloadAction<UserProfile>) => {
       state.data = action.payload;
       state.loading = false;
     },
-    fetchProfileFailure: (state, action: PayloadAction<string>) => {
+    getProfileFailure: (state, action: PayloadAction<string>) => {
       state.loading = false;
       state.error = action.payload;
     },
@@ -36,9 +36,9 @@ const profileSlice = createSlice({
 });
 
 export const {
-  fetchProfileRequest,
-  fetchProfileSuccess,
-  fetchProfileFailure,
+  getProfileRequest,
+  getProfileSuccess,
+  getProfileFailure,
   clearProfile,
 } = profileSlice.actions;
 

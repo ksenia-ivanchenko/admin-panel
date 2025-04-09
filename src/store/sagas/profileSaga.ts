@@ -1,21 +1,21 @@
 import { getProfileApi } from 'api/requests/profile';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {
-  fetchProfileRequest,
-  fetchProfileSuccess,
-  fetchProfileFailure,
+  getProfileRequest,
+  getProfileSuccess,
+  getProfileFailure,
 } from 'store/slices/profileSlice';
 
-function* fetchProfileSaga() {
+function* getProfileSaga() {
   try {
     const profile = yield call(getProfileApi);
-    yield put(fetchProfileSuccess(profile));
+    yield put(getProfileSuccess(profile));
   } catch (error) {
     console.error('ошибка при получении профиля:', error);
-    yield put(fetchProfileFailure(error.message || 'неизвестная ошибка'));
+    yield put(getProfileFailure(error.message || 'ошибка загрузки профиля'));
   }
 }
 
-export function* watchProfile() {
-  yield takeLatest(fetchProfileRequest.type, fetchProfileSaga);
+export function* profileSaga() {
+  yield takeLatest(getProfileRequest.type, getProfileSaga);
 }
