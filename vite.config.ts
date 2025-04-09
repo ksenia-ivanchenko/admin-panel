@@ -11,12 +11,12 @@ export default defineConfig({
   server: { open: true },
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, 'src/entities'),
-      '@pages': path.resolve(__dirname, 'src/pages'),
-      '@api': path.resolve(__dirname, 'src/api'),
-      '@helpers': path.resolve(__dirname, 'src/helpers'),
-      '@store': path.resolve(__dirname, 'src/store'),
-      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      components: path.resolve(__dirname, 'src/entities'),
+      pages: path.resolve(__dirname, 'src/pages'),
+      api: path.resolve(__dirname, 'src/api'),
+      helpers: path.resolve(__dirname, 'src/helpers'),
+      store: path.resolve(__dirname, 'src/store'),
+      hooks: path.resolve(__dirname, 'src/hooks'),
     },
   },
   css: {

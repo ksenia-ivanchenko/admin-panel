@@ -12,12 +12,12 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@components": ["components/"],
-      "@pages": ["pages/"],
-      "@api": ["api/"],
-      "@helpers": ["helpers/"],
-      "@store": ["store/"],
-      "@hooks": ["hooks/"]
+      "components": ["components/"],
+      "pages": ["pages/"],
+      "api": ["api/"],
+      "helpers": ["helpers/"],
+      "store": ["store/"],
+      "hooks": ["hooks/"]
     }
   },
   "include": ["src"]
