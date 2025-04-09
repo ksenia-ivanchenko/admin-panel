@@ -8,10 +8,15 @@ import {
   useSelector as selectorHook,
 } from 'react-redux';
 import { postsReducer } from './slices/postsSlice';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+
+export const history = createBrowserHistory();
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const rootReducer = combineReducers({
+  router: connectRouter(history),
   profile: profileReducer,
   posts: postsReducer,
 });
@@ -19,7 +24,10 @@ export const rootReducer = combineReducers({
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
+    getDefaultMiddleware({ thunk: false }).concat(
+      sagaMiddleware,
+      routerMiddleware(history)
+    ),
 });
 
 sagaMiddleware.run(rootSaga);
