@@ -11,6 +11,7 @@
     "module": "esnext",
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
+    "skipLibCheck": true,
     "paths": {
       "components": ["components/"],
       "pages": ["pages/"],
