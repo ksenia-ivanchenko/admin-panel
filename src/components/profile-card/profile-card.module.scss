@@ -1,0 +1,17 @@
+.card {
+  max-width: 300px;
+  border-radius: 12;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+  @include mobile {
+    max-width: 400px;
+  }
+
+  @include tablet {
+    max-width: 600px;
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+}

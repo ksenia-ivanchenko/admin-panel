@@ -1,6 +1,5 @@
 export const ROUTES = {
-  MAIN: '/',
-  LOGIN: '/login',
-  PROFILE: '/profile',
-  POSTS: '/posts',
+  LOGIN: { path: '/login', name: 'Авторизация' },
+  PROFILE: { path: '/profile', name: 'Профиль' },
+  POSTS: { path: '/posts', name: 'Посты' },
 };

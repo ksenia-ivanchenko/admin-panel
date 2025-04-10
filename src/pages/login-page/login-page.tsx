@@ -13,8 +13,9 @@ export const LoginPage = () => {
     const { email, password } = credentials;
 
     await login({ email, password });
-    dispatch(push(ROUTES.MAIN));
+    dispatch(push(ROUTES.PROFILE.path));
   };
+
   return (
     <div className={styles.page}>
       <LoginForm onSubmit={handleLogin} />
