@@ -1,5 +1,6 @@
 import { api } from 'api/client';
-import { deleteCookie, getCookie, setCookie } from 'helpers/cookie';
+import { getCookie, setCookie } from 'helpers/cookie';
+import { logoutApi } from './logout';
 
 export type TokenResponse = {
   access_token: string;
@@ -43,16 +44,8 @@ export const refreshAccessToken = async (refreshToken: string) => {
   }
 };
 
-export const checkAndRefreshToken = async (): Promise<void> => {
-  const accessToken = getCookie('access_token');
+export const checkAndRefreshToken = async () => {
   const refreshToken = getCookie('refresh_token');
-
-  if (!accessToken) {
-    throw new Error('не найден access_token');
-  }
-  if (!refreshToken) {
-    throw new Error('не найден refresh_token');
-  }
 
   const accessExpTime = localStorage.getItem('access_expired_at');
   const refreshExpTime = localStorage.getItem('refresh_expired_at');
@@ -67,9 +60,6 @@ export const checkAndRefreshToken = async (): Promise<void> => {
 
   if (refreshExpTime && currentTime >= Number(refreshExpTime)) {
     console.log('refresh_token истек, надо залогиниться');
-    deleteCookie('access_token');
-    deleteCookie('refresh_token');
-    localStorage.removeItem('access_expired_at');
-    localStorage.removeItem('refresh_expired_at');
+    logoutApi();
   }
 };

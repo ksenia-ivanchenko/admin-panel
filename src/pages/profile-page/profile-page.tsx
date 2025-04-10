@@ -5,7 +5,7 @@ import { getProfileRequest } from 'store/slices/profileSlice';
 import styles from './profile-page.module.scss';
 import { Skeleton } from 'antd';
 
-export const ProfilePage = () => {
+const ProfilePage = () => {
   const dispatch = useDispatch();
   const { data: user, error, loading } = useSelector((state) => state.profile);
 
@@ -32,3 +32,5 @@ export const ProfilePage = () => {
     </div>
   );
 };
+
+export default ProfilePage;

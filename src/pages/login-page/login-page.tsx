@@ -6,7 +6,7 @@ import { LoginData } from 'helpers/types';
 import { useDispatch } from 'store';
 import styles from './login-page.module.scss';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
 
   const handleLogin = async (credentials: LoginData) => {
@@ -22,3 +22,5 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+export default LoginPage;

@@ -1,6 +1,6 @@
 import { deleteCookie } from 'helpers/cookie';
 
-export const logout = () => {
+export const logoutApi = () => {
   deleteCookie('access_token');
   deleteCookie('refresh_token');
   localStorage.removeItem('access_expired_at');
