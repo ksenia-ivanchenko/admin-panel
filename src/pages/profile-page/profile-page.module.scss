@@ -4,3 +4,19 @@
   justify-content: center;
   block-size: 100%;
 }
+
+.skeletonProfileCard {
+  width: 300px;
+  min-height: 260px;
+  padding: 20px;
+  border-radius: 12;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+  @include mobile {
+    width: 400px;
+  }
+
+  @include tablet {
+    width: 600px;
+  }
+}

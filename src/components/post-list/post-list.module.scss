@@ -1,0 +1,43 @@
+.spin {
+  width: 100%;
+  margin: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.pagination {
+  margin-block-start: 20px;
+}
+
+.skeletonCard {
+  width: calc(100vw - 2 * 18px);
+  margin-right: 18px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @include mobile {
+    width: calc((100vw - 4 * 18px) / 2);
+  }
+
+  @include tablet {
+    width: calc((100vw - 4 * 18px) / 3);
+  }
+}
+
+.skeletonImage {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+}
+
+.rows {
+  row-gap: 20px;
+}

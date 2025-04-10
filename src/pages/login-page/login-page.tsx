@@ -13,7 +13,7 @@ export const LoginPage = () => {
     const { email, password } = credentials;
 
     await login({ email, password });
-    dispatch(push(ROUTES.PROFILE.path));
+    dispatch(push(ROUTES.POSTS.path));
   };
 
   return (
