@@ -1,11 +1,7 @@
 import { api } from 'api/client';
 import { setCookie } from 'helpers/cookie';
 import { TokenResponse } from './tokens';
-
-type LoginData = {
-  email: string;
-  password: string;
-};
+import { LoginData } from 'helpers/types';
 
 export const login = async ({ email, password }: LoginData) => {
   try {

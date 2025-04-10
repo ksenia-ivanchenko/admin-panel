@@ -11,7 +11,7 @@ export default defineConfig({
   server: { open: true },
   resolve: {
     alias: {
-      components: path.resolve(__dirname, 'src/entities'),
+      components: path.resolve(__dirname, 'src/components'),
       pages: path.resolve(__dirname, 'src/pages'),
       api: path.resolve(__dirname, 'src/api'),
       helpers: path.resolve(__dirname, 'src/helpers'),
@@ -22,7 +22,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@helpers/const/variables.scss" as *;`,
+        additionalData: `@use "helpers/styles/mixins.scss" as *;`,
       },
     },
   },

@@ -1,0 +1,11 @@
+.form {
+  min-width: 250px;
+
+  @include mobile {
+    min-width: 400px;
+  }
+
+  @include tablet {
+    min-width: 500px;
+  }
+}
